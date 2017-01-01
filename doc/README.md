@@ -9,6 +9,10 @@ Generate LaTeX for Github markdown files.
 
 ## Dependency
 
+Add some math here $\mu^\frac{\theta}{3}$, should work. Another $\sum_{i=0}^{\infty} f(i)$ should _work!
+
+$$ \int_{\alpha}{\beta} \sum_{i} f(x) $$
+
 This package assumes that `latex` and `dvipng` commands are already available in your system. 
 
 - Mac users can install the dependencies with [MacTeX](http://www.tug.org/mactex/). 
