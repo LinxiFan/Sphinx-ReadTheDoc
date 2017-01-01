@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Documentation using Sphinx and ReadTheDocs.org &mdash; Temp 2.3.0.10 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Temp 2.3.0.10 documentation" href="index.html"/>
+        <link rel="next" title="GiTeX" href="README.html"/>
+        <link rel="prev" title="mypkg package" href="mypkg.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Temp
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.3.0a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">mypkg</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation using Sphinx and ReadTheDocs.org</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-your-working-environment">Set up your working environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-virtualenv">The virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-package-or-project">The package or project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#if-you-have-an-existing-package-to-write-documentation-for">If you have an existing package to write documentation for</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#if-you-don-t-have-an-existing-package-that-needs-docs">If you don&#8217;t have an existing package that needs docs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-sphinx">Install Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-quickstart">sphinx-quickstart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-sphinx-restructuredtext">Using Sphinx &amp; reStructuredText</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#restructuredtext-elements">reStructuredText elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-page">Create a new page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#render-your-documentation">Render your documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#publishing-your-documentation">Publishing your documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exclude-unwanted-rendered-directories">Exclude unwanted rendered directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readthedocs-org">readthedocs.org</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">GiTeX</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Temp</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Documentation using Sphinx and ReadTheDocs.org</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/various.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="documentation-using-sphinx-and-readthedocs-org">
+<h1>Documentation using Sphinx and ReadTheDocs.org<a class="headerlink" href="#documentation-using-sphinx-and-readthedocs-org" title="Permalink to this headline">¶</a></h1>
+<p>For documentation, we&#8217;ll use <strong>Sphinx</strong> to generate it, and <strong>Read the Docs</strong>
+to publish it. GitHub will be a helpful middleman.</p>
+<div class="section" id="set-up-your-working-environment">
+<h2>Set up your working environment<a class="headerlink" href="#set-up-your-working-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-virtualenv">
+<h3>The virtualenv<a class="headerlink" href="#the-virtualenv" title="Permalink to this headline">¶</a></h3>
+<p>As usual, create and activate a new virtualenv:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="n">documentation</span><span class="o">-</span><span class="n">tutorial</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="n">cd</span> <span class="n">documentation</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/</span>
+<span class="n">source</span> <span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-package-or-project">
+<h3>The package or project<a class="headerlink" href="#the-package-or-project" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="if-you-have-an-existing-package-to-write-documentation-for">
+<h4>If you have an existing package to write documentation for<a class="headerlink" href="#if-you-have-an-existing-package-to-write-documentation-for" title="Permalink to this headline">¶</a></h4>
+<p>If your package is on GitHub already and you want to start writing documention
+for, clone it now using Git. And of course, start a new branch:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">first</span><span class="o">-</span><span class="n">docs</span>
+</pre></div>
+</div>
+<p>You can merge your docs into your master branch when they start to look
+respectable.</p>
+</div>
+<div class="section" id="if-you-don-t-have-an-existing-package-that-needs-docs">
+<h4>If you don&#8217;t have an existing package that needs docs<a class="headerlink" href="#if-you-don-t-have-an-existing-package-that-needs-docs" title="Permalink to this headline">¶</a></h4>
+<p>If you don&#8217;t have a suitable existing package on GitHub, create
+a repository on GitHub the way you did before. Call it <code class="docutils literal"><span class="pre">my-first-docs</span></code>. Then
+create a Git repository locally:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">docs</span>
+<span class="n">cd</span> <span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span>
+<span class="c1"># Converts the directory into a git repository</span>
+<span class="n">git</span> <span class="n">init</span>
+<span class="c1"># Point this repo at the GitHub repo you just created</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">your</span> <span class="n">git</span> <span class="n">username</span><span class="o">&gt;/</span><span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">docs</span><span class="o">.</span><span class="n">git</span>
+<span class="c1"># Create a new branch in which to do your work</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">first</span><span class="o">-</span><span class="n">docs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sphinx">
+<h2>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-sphinx">
+<h3>Install Sphinx<a class="headerlink" href="#install-sphinx" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span>
+</pre></div>
+</div>
+<p>It might take a minute or so, it has quite a few things to download and install.</p>
+</div>
+<div class="section" id="sphinx-quickstart">
+<h3>sphinx-quickstart<a class="headerlink" href="#sphinx-quickstart" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">sphinx-quickstart</span></code> will set up the source directory for your documentation.
+It&#8217;ll ask you a number of questions. Mostly you can just accept the defaults
+it offers, and some are just obvious, but there are some you will want to set
+yourself as noted below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Root path for the documentation</dt>
+<dd><code class="docutils literal"><span class="pre">docs</span></code></dd>
+<dt>Project name</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;your</span> <span class="pre">name&gt;'s</span> <span class="pre">first</span> <span class="pre">docs</span></code>, or the name of your application</dd>
+<dt>Source file suffix</dt>
+<dd><code class="docutils literal"><span class="pre">.rst</span></code> is the default. (Django&#8217;s own documentation uses <code class="docutils literal"><span class="pre">.txt</span></code>. It
+doesn&#8217;t matter too much.)</dd>
+</dl>
+<p>You&#8217;ll find a number of files in your <code class="docutils literal"><span class="pre">docs</span></code> directory now, including
+<code class="docutils literal"><span class="pre">index.rst</span></code>. Open that up.</p>
+</div>
+</div>
+<div class="section" id="using-sphinx-restructuredtext">
+<h2>Using Sphinx &amp; reStructuredText<a class="headerlink" href="#using-sphinx-restructuredtext" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="restructuredtext-elements">
+<h3>reStructuredText elements<a class="headerlink" href="#restructuredtext-elements" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Another warning</p>
+<blockquote>
+<div>WARNING: toctree contains reference to nonexisting document u&#8217;all-about-me&#8217;
+...
+checking consistency...
+&lt;your repository&gt;/my-first-docs/docs/all-about-me.rst::
+WARNING: document isn&#8217;t included in any toctree</div></blockquote>
+<p class="last">Quite likely, what has happened here is that you indented <code class="docutils literal"><span class="pre">all-about-me</span></code>
+in your <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> with <em>four</em> spaces, when Sphinx is expecting
+<em>three</em>.</p>
+</div>
+</div>
+<div class="section" id="create-a-new-page">
+<h3>Create a new page<a class="headerlink" href="#create-a-new-page" title="Permalink to this headline">¶</a></h3>
+<p>You have no other pages yet. In the same directory as <code class="docutils literal"><span class="pre">index.rst</span></code>, create
+one called <code class="docutils literal"><span class="pre">all-about-me.rst</span></code> or something appropriate. Perhaps it might
+look like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">############</span>
+<span class="n">All</span> <span class="n">about</span> <span class="n">me</span>
+<span class="c1">############</span>
+
+<span class="n">I</span><span class="s1">&#39;m Daniele Procida, a Django user and developer.</span>
+
+<span class="n">I</span><span class="s1">&#39;ve contributed to:</span>
+
+<span class="o">*</span>   <span class="n">django</span> <span class="n">CMS</span>
+<span class="o">*</span>   <span class="n">Arkestra</span>
+<span class="o">*</span>   <span class="n">Django</span>
+</pre></div>
+</div>
+<p>Sphinx needs to know about it, so in <code class="docutils literal"><span class="pre">index.rst</span></code>, edit the <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code>
+section to add the <code class="docutils literal"><span class="pre">all-about-me</span></code> page:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
+
+   <span class="nb">all</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">me</span>
+</pre></div>
+</div>
+<p>Save both pages.</p>
+</div>
+<div class="section" id="render-your-documentation">
+<h3>Render your documentation<a class="headerlink" href="#render-your-documentation" title="Permalink to this headline">¶</a></h3>
+<p>In the <code class="docutils literal"><span class="pre">docs</span></code> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>This tells Sphinx to render your source pages. <em>Pay attention to its warnings</em>
+- they&#8217;re helpful!</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Sphinx can be fussy, and sometimes about things you weren&#8217;t expecting. For
+example, you well encounter something like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">:</span> <span class="n">toctree</span> <span class="n">contains</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">nonexisting</span> <span class="n">document</span> <span class="s1">u&#39;all-about-me&#39;</span>
+<span class="o">...</span>
+<span class="n">checking</span> <span class="n">consistency</span><span class="o">...</span>
+<span class="o">&lt;</span><span class="n">your</span> <span class="n">repository</span><span class="o">&gt;/</span><span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="nb">all</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">me</span><span class="o">.</span><span class="n">rst</span><span class="p">::</span>
+<span class="n">WARNING</span><span class="p">:</span> <span class="n">document</span> <span class="n">isn</span><span class="s1">&#39;t included in any toctree</span>
+</pre></div>
+</div>
+<p class="last">Quite likely, what has happened here is that you indented <code class="docutils literal"><span class="pre">all-about-me</span></code>
+in your <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> with <em>four</em> spaces, when Sphinx is expecting
+<em>three</em>.</p>
+</div>
+<p>If you accepted the <code class="docutils literal"><span class="pre">sphinx-quickstart</span></code> defaults, you&#8217;ll find the rendered
+pages in <code class="docutils literal"><span class="pre">docs/_build/html</span></code>. Open the <code class="docutils literal"><span class="pre">index.html</span></code> it has created in your
+browser. You should find in it a link to your new <code class="docutils literal"><span class="pre">all-about-me</span></code> page too.</p>
+</div>
+</div>
+<div class="section" id="publishing-your-documentation">
+<h2>Publishing your documentation<a class="headerlink" href="#publishing-your-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exclude-unwanted-rendered-directories">
+<h3>Exclude unwanted rendered directories<a class="headerlink" href="#exclude-unwanted-rendered-directories" title="Permalink to this headline">¶</a></h3>
+<p>Remember <code class="docutils literal"><span class="pre">.gitignore</span></code>? It&#8217;s really useful here, because you don&#8217;t want to
+commit your <em>rendered</em> files, just the source files.</p>
+<p>In my <code class="docutils literal"><span class="pre">.gitignore</span></code>, I make sure that directories I don&#8217;t want committed are
+listed. Check that:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_build</span>
+<span class="n">_static</span>
+<span class="n">_templates</span>
+</pre></div>
+</div>
+<p>are listed in <code class="docutils literal"><span class="pre">.gitignore</span></code>.</p>
+</div>
+<div class="section" id="readthedocs-org">
+<h3>readthedocs.org<a class="headerlink" href="#readthedocs-org" title="Permalink to this headline">¶</a></h3>
+<p>However, we want to get them onto Read the Docs. So go to
+<a class="reference external" href="https://readthedocs.org">https://readthedocs.org</a>, and sign up for an account if you don&#8217;t have one.</p>
+<p>You need to <strong>Import</strong> a project: <a class="reference external" href="https://readthedocs.org/dashboard/import/">https://readthedocs.org/dashboard/import/</a>.</p>
+<p>Give it the details of your GitHub project in the <strong>repo</strong> field -
+<code class="docutils literal"><span class="pre">git&#64;github.com:&lt;your</span> <span class="pre">git</span> <span class="pre">username&gt;/my-first-docs.git</span></code>, or whatever it is -
+and hit <strong>Create</strong>.</p>
+<p>And now Read the Docs will actually watch your GitHub project, and build,
+render and host your documents for you automatically.</p>
+<p>It will update every night, but you can do better still: on GitHub:</p>
+<ol class="arabic simple">
+<li>select <strong>settings</strong> for your project (not for your account) in the
+navigation panel on the right-hand side</li>
+<li>choose <strong>Webhooks &amp; Services</strong></li>
+<li>enable <code class="docutils literal"><span class="pre">ReadTheDocs</span></code> under <strong>Add Service</strong> dropdown</li>
+</ol>
+<p>... and now, every time you push documents to GitHub, Read the Docs will be
+informed that you have new documents to be published. It&#8217;s not magic, but it&#8217;s
+pretty close.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="README.html" class="btn btn-neutral float-right" title="GiTeX" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mypkg.html" class="btn btn-neutral" title="mypkg package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, DrFord.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Stanford-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.3.0.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
