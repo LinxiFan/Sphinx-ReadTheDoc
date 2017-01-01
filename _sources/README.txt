@@ -8,6 +8,11 @@ Generate LaTeX for Github markdown files.
 Dependency
 ----------
 
+Add some math here :math:`\mu^\frac{\theta}{3}`, should work. Another
+:math:`\sum_{i=0}^{\infty} f(i)` should \_work!
+
+.. math::  \int_{\alpha}{\beta} \sum_{i} f(x) 
+
 This package assumes that ``latex`` and ``dvipng`` commands are already
 available in your system.
 
