@@ -58,9 +58,16 @@ c|commit) # commit
     gh-pages-commit
 ;;
 
-p|push)
+push)
     gh-pages-push
+;;
 
+p|py)
+    if [ $# -lt 2 ]; then
+        echo ABORT: ./sphinx.sh py "pkg_name"
+        exit 1
+    fi
+    sphinx-apidoc --force -o doc/source/ ${@:2}
 ;;
 
 *) # run ./sphinx.sh without argument to build html 
