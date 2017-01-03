@@ -3,7 +3,8 @@
 # Automate the document building process
 #
 
-HTML_DIR=doc/build/html
+ROOT_DIR=docs
+HTML_DIR=$ROOT_DIR/build/html
 
 trim() {
     echo -e "$1" | tr -d '[:space:]'
@@ -27,7 +28,7 @@ gh-pages-switch() {
 gh-pages-commit() {
     gh-pages-switch
     echo 'Commit to gh-pages branch ...'
-    if [ ! -d $HTML_DIR ]; then
+    if [[ ! -d $HTML_DIR ]]; then
         echo ABORT: $HTML_DIR does not exist. Run ./sphinx.sh first.
         git checkout master
         exit 1
@@ -120,6 +121,39 @@ def setup(app):
 EOT
 }
 
+# automate sphinx-quickstart
+auto-quickstart() {
+proj_name="$1"
+proj_author="$2"
+proj_version="$3"
+cat <<EOT | sphinx-quickstart
+$ROOT_DIR
+y
+
+$proj_name
+$proj_author
+$proj_version
+$proj_version
+
+
+
+y
+y
+n
+n
+y
+n
+n
+y
+y
+y
+y
+y
+n
+
+EOT
+}
+
 # ======================= command line args =======================
 case $1 in
 # >>> commit generated html to gh-pages branch
@@ -135,23 +169,54 @@ push)
 # >>> regenerate pydocs
 p|py)
     if [ $# -lt 2 ]; then
-        echo ABORT: ./sphinx.sh py "pkg_name"
+        echo "ABORT: ./sphinx.sh py <package_name>"
         exit 1
     fi
-    sphinx-apidoc --force -o doc/source/ ${@:2}
+    sphinx-apidoc --force -o $ROOT_DIR/source/ ${@:2}
 ;;
 
 # >>> append code to the end of "conf.py"
-extra)
-	append-extra-conf doc/source/conf.py
+extra|append)
+    conf_file=$ROOT_DIR/source/conf.py
+	append-extra-conf $conf_file
+    echo "EXTRA CONF code appended to $conf_file"
+;;
+
+# >>> automate sphinx-quickstart command
+start)
+    if [ $# -lt 4 ]; then
+        echo "ABORT: ./sphinx.sh start <project_name> <authors> <version>"
+        exit 1
+    fi
+    # Warning: must quote each arg to include potential space in <author> list
+	auto-quickstart "$2" "$3" "$4"
+;;
+
+# >>> display help
+h|help|-h|--help)
+cat << EOT
+usage: ./sphinx.sh <command> <args...>
+start:      automate "sphinx-quickstart" command
+    args: <project_name> "<authors>" <version>
+extra:      append extra config code to the end of "$ROOT_DIR/source/conf.py"
+p|py:       regenerate pydocs
+    args: <package_name>
+c|commit:   commit generated html to "gh-pages" branch
+push:       push "gh-pages" branch to remote
+<empty>:    run ./sphinx.sh without args to build html
+EOT
 ;;
 
 # >>> run ./sphinx.sh without argument to build html 
 *) 
-cd doc
-make clean && make html
-cd ..
-open doc/build/html/index.html
+    if [[ ! -d $ROOT_DIR || ! -f $ROOT_DIR/Makefile ]]; then
+        echo ABORT: project not initiated. Run "./sphinx.sh start" first.
+        exit 1
+    fi
+    cd $ROOT_DIR
+    make clean && make html
+    cd ..
+    open $ROOT_DIR/build/html/index.html
 ;;
 esac
 
