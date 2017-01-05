@@ -466,14 +466,16 @@ source_suffix = ['.rst', '.md']
 todo_include_todos = True
 
 THEME = 'stanford'
+
 if THEME == 'sphinx_rtd':
     import sphinx_rtd_theme
     html_theme = "sphinx_rtd_theme"
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-elif THEME == 'stanford':
-    import stanford_theme
-    html_theme = "stanford_theme"
-    html_theme_path = [stanford_theme.get_html_theme_path()]
+elif THEME in ['stanford', 'neo_rtd']:
+    import sphinx_theme
+    html_theme = THEME + '_theme'
+    html_theme_path = [sphinx_theme.get_html_theme_path(html_theme)]
+    #print(html_theme_path)
 else:
     html_theme = "classic"
 
