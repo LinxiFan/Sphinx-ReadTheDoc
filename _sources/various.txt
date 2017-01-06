@@ -94,7 +94,8 @@ reStructuredText elements
 -------------------------
 
 .. warning::
-    Another warning
+    Warning directive, similar colors apply to
+    ``.caution, .attention``
 
         WARNING: toctree contains reference to nonexisting document u'all-about-me'
         ...
@@ -106,6 +107,18 @@ reStructuredText elements
     in your ``.. toctree::`` with *four* spaces, when Sphinx is expecting
     *three*.
 
+
+.. tip::
+    This is a tip directive. Similar colors apply to
+    ``.hint``
+
+.. danger::
+    This is a danger directive. Similar colors apply to 
+    ``.important, .error``
+
+.. seealso::
+    This is a See Also directive.
+    
 
 Create a new page
 -----------------
