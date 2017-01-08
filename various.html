@@ -86,6 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules.html">mypkg</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation using Sphinx and ReadTheDocs.org</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-your-working-environment">Set up your working environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#restructuredtext-elements">reStructuredText elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-virtualenv">The virtualenv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-package-or-project">The package or project</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#if-you-have-an-existing-package-to-write-documentation-for">If you have an existing package to write documentation for</a></li>
@@ -100,7 +101,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#using-sphinx-restructuredtext">Using Sphinx &amp; reStructuredText</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#restructuredtext-elements">reStructuredText elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-a-new-page">Create a new page</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#render-your-documentation">Render your documentation</a></li>
 </ul>
@@ -182,6 +182,47 @@
 to publish it. GitHub will be a helpful middleman.</p>
 <div class="section" id="set-up-your-working-environment">
 <h2>Set up your working environment<a class="headerlink" href="#set-up-your-working-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="restructuredtext-elements">
+<h3>reStructuredText elements<a class="headerlink" href="#restructuredtext-elements" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Warning directive, similar colors apply to
+<code class="docutils literal"><span class="pre">.caution,</span> <span class="pre">.attention</span></code></p>
+<blockquote>
+<div>WARNING: toctree contains reference to nonexisting document u&#8217;all-about-me&#8217;
+...
+checking consistency...
+&lt;your repository&gt;/my-first-docs/docs/all-about-me.rst::
+WARNING: document isn&#8217;t included in any toctree</div></blockquote>
+<p class="last">Quite likely, what has happened here is that you indented <code class="docutils literal"><span class="pre">all-about-me</span></code>
+in your <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> with <em>four</em> spaces, when Sphinx is expecting
+<em>three</em>.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">This is a tip directive. Similar colors apply to
+<code class="docutils literal"><span class="pre">.hint</span></code></p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">This is a danger directive. Similar colors apply to
+<code class="docutils literal"><span class="pre">.important,</span> <span class="pre">.error</span></code></p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">This is a See Also directive.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">This is a tip directive. Similar colors apply to
+<code class="docutils literal"><span class="pre">.hint</span></code></p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This is a danger directive. Similar colors apply to
+<code class="docutils literal"><span class="pre">.important,</span> <span class="pre">.error</span></code></p>
+</div>
+</div>
 <div class="section" id="the-virtualenv">
 <h3>The virtualenv<a class="headerlink" href="#the-virtualenv" title="Permalink to this headline">¶</a></h3>
 <p>As usual, create and activate a new virtualenv:</p>
@@ -255,37 +296,6 @@ doesn&#8217;t matter too much.)</dd>
 </div>
 <div class="section" id="using-sphinx-restructuredtext">
 <h2>Using Sphinx &amp; reStructuredText<a class="headerlink" href="#using-sphinx-restructuredtext" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="restructuredtext-elements">
-<h3>reStructuredText elements<a class="headerlink" href="#restructuredtext-elements" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>Warning directive, similar colors apply to
-<code class="docutils literal"><span class="pre">.caution,</span> <span class="pre">.attention</span></code></p>
-<blockquote>
-<div>WARNING: toctree contains reference to nonexisting document u&#8217;all-about-me&#8217;
-...
-checking consistency...
-&lt;your repository&gt;/my-first-docs/docs/all-about-me.rst::
-WARNING: document isn&#8217;t included in any toctree</div></blockquote>
-<p class="last">Quite likely, what has happened here is that you indented <code class="docutils literal"><span class="pre">all-about-me</span></code>
-in your <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> with <em>four</em> spaces, when Sphinx is expecting
-<em>three</em>.</p>
-</div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">This is a tip directive. Similar colors apply to
-<code class="docutils literal"><span class="pre">.hint</span></code></p>
-</div>
-<div class="admonition danger">
-<p class="first admonition-title">Danger</p>
-<p class="last">This is a danger directive. Similar colors apply to
-<code class="docutils literal"><span class="pre">.important,</span> <span class="pre">.error</span></code></p>
-</div>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">This is a See Also directive.</p>
-</div>
-</div>
 <div class="section" id="create-a-new-page">
 <h3>Create a new page<a class="headerlink" href="#create-a-new-page" title="Permalink to this headline">¶</a></h3>
 <p>You have no other pages yet. In the same directory as <code class="docutils literal"><span class="pre">index.rst</span></code>, create
