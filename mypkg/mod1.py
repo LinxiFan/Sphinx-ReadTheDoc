@@ -1,8 +1,11 @@
 def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
     """Fetches rows from a Bigtable.
-    Retrieves rows pertaining to the given keys from the Table instance
-    represented by big_table.  Silly things may happen if
-    other_silly_variable is not None.
+
+    Note:
+
+      Retrieves rows pertaining to the given keys from the Table instance
+      represented by big_table.  Silly things may happen if
+      ``other_silly_variable`` is not None.
 
     Args:
       big_table (int): An open Bigtable Table instance.
@@ -12,7 +15,7 @@ def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
     Returns:
       A dict mapping keys to the corresponding table row data
       fetched. Each row is represented as a tuple of strings. For
-      example: ``some in line shitty code``
+      example: ``some in line demoty code``
 
       .. math::
          (a + b)^2 &= a^2 + 2ab + b^2 \\\\
@@ -30,11 +33,22 @@ def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
 
 
 def seonc_method(x, y, *z):
-    """Computes shit
-    Randoms hit y aefiojo dgj
+    """Computes demo
+
+    Warning:
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Donec vel porttitor quam. Aliquam tellus mi, facilisis nec eros eu, 
+      auctor efficitur dui. Duis eget suscipit mauris. Donec sollicitudin::
+
+          felis id leo dapibus, vitae viverra tortor convallis. 
+          Fusce pretium ornare dui, vitae varius libero pulvinar volutpat. 
+
+      Fusce eu ultricies magna. Donec mattis volutpat nulla, ut auctor tortor semper vitae. 
+      Integer non vestibulum justo, in finibus magna.
 
     Args:
-      X: An open wyine fking page
+      X: An open wyine 123ing page
       Y: A sequence of ``strings representing the key`` of each table row
         to fetch.
       Z: Another optional variable, that has a much
@@ -65,14 +79,14 @@ class Foo:
     """
 
     def __init__(self, arg1, arg2=[1,2,3]):
-        """Computes shit
+        """Computes demo
         Randoms hit y aefiojo dgj
         """
         pass
 
 
     def methody(self, bro, gugu=(1,2,3)):
-        """Computes shit
+        """Computes demo
         Randoms hit potato banan yooo
 
         Args:

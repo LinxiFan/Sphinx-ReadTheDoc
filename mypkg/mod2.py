@@ -18,7 +18,7 @@ def second_big_table(big_table, keys, other_silly_variable=None):
     Returns:
       A dict mapping keys to the corresponding table row data
       fetched. Each row is represented as a tuple of strings. For
-      example: ``some in line shitty code``
+      example: ``some in line demoty code``
 
       .. math::
          (a + b)^2 &= a^2 + 2ab + b^2 \\\\
@@ -40,7 +40,7 @@ def third_extrenal_func(x, y, *z):
     Randoms hit y aefiojo dgj
 
     Args:
-      X: An open wyine fking page
+      X: An open wyine 123ing page
       Y: A sequence of ``strings representing the key`` of each table row
         to fetch.
       Z: Another optional variable, that has a much
@@ -117,7 +117,7 @@ class Bar:
         Randoms hit y aefiojo dgj
 
         Args:
-          X: An open wyine fking page
+          X: An open wyine 123ing page
           Y: A sequence of :code:`big table code` of each table row
             to fetch.
           Z: Another optional variable, that has a much

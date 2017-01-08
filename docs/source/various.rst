@@ -9,6 +9,44 @@ to publish it. GitHub will be a helpful middleman.
 Set up your working environment
 ===============================
 
+reStructuredText elements
+-------------------------
+
+.. warning::
+    Warning directive, similar colors apply to
+    ``.caution, .attention``
+
+        WARNING: toctree contains reference to nonexisting document u'all-about-me'
+        ...
+        checking consistency...
+        <your repository>/my-first-docs/docs/all-about-me.rst::
+        WARNING: document isn't included in any toctree
+
+    Quite likely, what has happened here is that you indented ``all-about-me``
+    in your ``.. toctree::`` with *four* spaces, when Sphinx is expecting
+    *three*.
+
+
+.. tip::
+    This is a tip directive. Similar colors apply to
+    ``.hint``
+
+.. danger::
+    This is a danger directive. Similar colors apply to 
+    ``.important, .error``
+
+.. seealso::
+    This is a See Also directive.
+    
+
+.. hint::
+    This is a tip directive. Similar colors apply to
+    ``.hint``
+
+.. important::
+    This is a danger directive. Similar colors apply to 
+    ``.important, .error``
+
 The virtualenv
 --------------
 
@@ -89,36 +127,6 @@ You'll find a number of files in your ``docs`` directory now, including
 
 Using Sphinx & reStructuredText
 ===============================
-
-reStructuredText elements
--------------------------
-
-.. warning::
-    Warning directive, similar colors apply to
-    ``.caution, .attention``
-
-        WARNING: toctree contains reference to nonexisting document u'all-about-me'
-        ...
-        checking consistency...
-        <your repository>/my-first-docs/docs/all-about-me.rst::
-        WARNING: document isn't included in any toctree
-
-    Quite likely, what has happened here is that you indented ``all-about-me``
-    in your ``.. toctree::`` with *four* spaces, when Sphinx is expecting
-    *three*.
-
-
-.. tip::
-    This is a tip directive. Similar colors apply to
-    ``.hint``
-
-.. danger::
-    This is a danger directive. Similar colors apply to 
-    ``.important, .error``
-
-.. seealso::
-    This is a See Also directive.
-    
 
 Create a new page
 -----------------

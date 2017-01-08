@@ -69,13 +69,21 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
 
+try:
+    from sphinxcontrib import napoleon
+    # customized github.com/LinxiFan/sphinxcontrib-napoleon
+    napoleon_ext = 'sphinxcontrib.napoleon'
+except ImportError:
+    napoleon_ext = 'sphinx.ext.napoleon'
+
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
+    napoleon_ext,
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'sphinx.ext.todo',
 ]
 # Ensure HTTPS for correct mathjax rendering
 mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -87,12 +95,12 @@ napoleon_numpy_docstring = False
 napoleon_include_init_with_doc = False
 napoleon_include_private_with_doc = False
 napoleon_include_special_with_doc = True
-napoleon_use_admonition_for_examples = False
-napoleon_use_admonition_for_notes = False
-napoleon_use_admonition_for_references = False
+napoleon_use_admonition_for_examples = True
+napoleon_use_admonition_for_notes = True
+napoleon_use_admonition_for_references = True
 napoleon_use_ivar = False
 napoleon_use_param = True
-napoleon_use_rtype = True
+napoleon_use_rtype = False
 
 # The suffix(es) of source filenames.
 source_suffix = ['.rst', '.md']

@@ -8,8 +8,6 @@ def thrid_big_table(big_table, keys, other_silly_variable=None):
       Through caverns measureless to man
       Down to a sunless sea.
 
-    Other notes after the quoted block
-
     Args:
       big_table (int): An open Bigtable Table instance.
       keys (str): A sequence of strings representing the key of each table row to fetch.
@@ -18,7 +16,7 @@ def thrid_big_table(big_table, keys, other_silly_variable=None):
     Returns:
       A dict mapping keys to the corresponding table row data
       fetched. Each row is represented as a tuple of strings. For
-      example: ``some in line shitty code``
+      example: ``some in line demo code``
 
       .. math::
          (a + b)^2 &= a^2 + 2ab + b^2 \\\\
@@ -36,11 +34,23 @@ def thrid_big_table(big_table, keys, other_silly_variable=None):
 
 
 def fourth_extrenal_func(x, y, *z):
-    """Computes numpy brooooo
-    Randoms hit y aefiojo dgj
+    r"""Computes numpy brooooo
+
+    Warning: 
+        Randoms hit y aefiojo dgj
+
+        .. math::
+           (\delta + b)^2 &= a^2 + 2a\beta + b^2 \\
+                    &= \sum_{i=0}^{\infty} f(x) dx
+
+           (\epsilon - b)^1 = \alpha^2 - 2ab + \zeta^2
+
+        Cras mollis suscipit leo, nec aliquam dolor pulvinar eget. 
+        Curabitur tempus mattis diam et tristique. 
+        In sollicitudin quis sem quis maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
     Args:
-      X: An open wyine fking page
+      X: An open wyine 1234 page
       Y: A sequence of ``strings representing the key`` of each table row
         to fetch.
       Z: Another optional variable, that has a much
@@ -64,10 +74,23 @@ def fourth_extrenal_func(x, y, *z):
     pass
 
 
-class AwesoemClass:
+class AwesomeClass:
 
-    """ My Fregin class
+    """ My demo class
     this is some description and ``big table code`` embedded in this. 
+
+    Note:
+        Other notes after the quoted block
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit::
+
+            Donec vel porttitor quam. Aliquam tellus mi, facilisis nec eros eu, 
+            auctor efficitur dui. Duis eget suscipit mauris. 
+            Donec sollicitudin felis id leo dapibus, vitae viverra tortor convallis. 
+
+        Fusce pretium ornare dui, vitae varius libero pulvinar volutpat. 
+        Fusce eu ultricies magna. Donec mattis volutpat nulla, ut auctor 
+        tortor semper vitae. Integer non vestibulum justo, in finibus magna.
+
     """
 
     def __init__(self, arg1, arg2=[1,2,3]):
@@ -115,7 +138,7 @@ class AwesoemClass:
         """Computes method
 
         Args:
-          X: An open wyine fking page
+          X: An open wyine 1234 page
           Y: A sequence of :code:`big table code` of each table row
             to fetch.
           Z: Another optional variable, that has a much
