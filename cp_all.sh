@@ -1,4 +1,9 @@
 #!/bin/bash
+if [[ $# -lt 1 ]]; then
+    echo Must specify copy-to dir
+    exit 1
+fi
+
 cp -rf .nojekyll $1
 cp -rf *.html $1
 cp -rf *.js $1
