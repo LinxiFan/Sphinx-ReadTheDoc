@@ -201,23 +201,8 @@ start)
 	auto-quickstart "$2" "$3" "$4"
 ;;
 
-# >>> display help
-h|help|-h|--help)
-cat << EOT
-usage: ./sphinx.sh <command> <args...>
-start:      automate "sphinx-quickstart" command
-    args: <project_name> "<authors>" <version>
-extra:      append extra config code to the end of "$ROOT_DIR/source/conf.py"
-p|py:       regenerate pydocs
-    args: <package_name>
-c|commit:   commit generated html to "gh-pages" branch
-push:       push "gh-pages" branch to remote
-<empty>:    run ./sphinx.sh without args to build html
-EOT
-;;
-
-# >>> run ./sphinx.sh without argument to build html 
-*) 
+# >>> run ./sphinx.sh <b or build> to build html 
+b|build) 
     if [[ ! -d $ROOT_DIR || ! -f $ROOT_DIR/Makefile ]]; then
         echo ABORT: project not initiated. Run "./sphinx.sh start" first.
         exit 1
@@ -226,6 +211,21 @@ EOT
     make clean && make html
     cd ..
     open $ROOT_DIR/build/html/index.html
+;;
+
+# >>> display help
+h|help|-h|--help|*)
+cat << EOT
+usage: ./sphinx.sh <command> <args...>
+start:      automate "sphinx-quickstart" command
+    args: <project_name> "<authors>" <version>
+extra:      append extra config code to the end of "$ROOT_DIR/source/conf.py"
+p|py:       regenerate pydocs
+    args: <package_name>
+b|build:    clean and rebuild html
+c|commit:   commit generated html to "gh-pages" branch
+push:       push "gh-pages" branch to remote
+EOT
 ;;
 esac
 
